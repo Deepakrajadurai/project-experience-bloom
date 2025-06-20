@@ -1,51 +1,120 @@
 
+import { Code, Database, Cloud, Users, Award, Target } from 'lucide-react';
+
 const About = () => {
+  const highlights = [
+    {
+      icon: Code,
+      value: '3+',
+      label: 'Years Experience',
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      icon: Database,
+      value: '10+',
+      label: 'Technologies',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      icon: Cloud,
+      value: 'Enterprise',
+      label: 'Solutions',
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      icon: Users,
+      value: 'Global',
+      label: 'Clients',
+      color: 'from-orange-500 to-red-500'
+    }
+  ];
+
+  const expertise = [
+    {
+      icon: Award,
+      title: 'Enterprise Development',
+      description: 'Delivered scalable solutions for Fortune 500 companies including Caterpillar and Optum'
+    },
+    {
+      icon: Target,
+      title: 'Full-Stack Architecture',
+      description: 'Expert in designing and implementing complete web applications from database to UI'
+    },
+    {
+      icon: Cloud,
+      title: 'Cloud & DevOps',
+      description: 'Proficient in cloud technologies, CI/CD pipelines, and modern deployment strategies'
+    }
+  ];
+
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="section-padding relative">
+      <div className="container-custom">
+        {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            About Me
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="gradient-text">About Me</span>
           </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-gray-50 rounded-lg p-8 shadow-sm">
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              I'm a Master's student in Applied Computer Science in Germany with over 3+ years of 
-              professional experience as a Full Stack Developer. My journey in technology has been 
-              driven by a passion for creating scalable, efficient solutions that solve real-world problems.
-            </p>
-            
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              At Cognizant Technology Solutions, I delivered enterprise solutions for major clients 
-              like Caterpillar and Optum, specializing in full-stack architecture, DevOps, and Agile 
-              methodologies. My expertise spans across Java, Spring Boot, Angular, Python, and cloud 
-              technologies.
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Content */}
+          <div className="space-y-6">
+            <div className="glass-effect rounded-2xl p-8 hover-glow">
+              <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                I'm a <span className="gradient-text font-semibold">Master's student in Applied Computer Science</span> in Germany with over 
+                <span className="text-purple-400 font-semibold"> 3+ years of professional experience</span> as a Full Stack Developer. 
+                My journey in technology has been driven by a passion for creating scalable, efficient solutions that solve real-world problems.
+              </p>
+              
+              <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                At <span className="text-blue-400 font-semibold">Cognizant Technology Solutions</span>, I delivered enterprise solutions for major clients 
+                like <span className="text-green-400 font-semibold">Caterpillar and Optum</span>, specializing in full-stack architecture, DevOps, and Agile 
+                methodologies. My expertise spans across Java, Spring Boot, Angular, Python, and cloud technologies.
+              </p>
 
-            <p className="text-lg text-gray-700 leading-relaxed">
-              I'm skilled in full-stack architecture, DevOps, and Agile methodologies with strong 
-              problem-solving abilities, team collaboration skills, and UI/UX optimization expertise. 
-              I have a passion for clean code, continuous learning, and staying at the forefront of 
-              technology trends.
-            </p>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                I'm passionate about <span className="gradient-text font-semibold">clean code, continuous learning</span>, and staying at the forefront of 
+                technology trends while delivering exceptional user experiences.
+              </p>
+            </div>
+
+            {/* Expertise Cards */}
+            <div className="space-y-4">
+              {expertise.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div key={index} className="glass-effect rounded-xl p-6 hover-glow card-hover">
+                    <div className="flex items-start space-x-4">
+                      <div className="p-3 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl">
+                        <Icon size={24} className="text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                        <p className="text-gray-400">{item.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-            <div className="text-center p-6 bg-blue-50 rounded-lg">
-              <div className="text-3xl font-bold text-blue-600 mb-2">3+</div>
-              <div className="text-gray-700">Years Experience</div>
-            </div>
-            <div className="text-center p-6 bg-blue-50 rounded-lg">
-              <div className="text-3xl font-bold text-blue-600 mb-2">10+</div>
-              <div className="text-gray-700">Technologies</div>
-            </div>
-            <div className="text-center p-6 bg-blue-50 rounded-lg">
-              <div className="text-3xl font-bold text-blue-600 mb-2">Enterprise</div>
-              <div className="text-gray-700">Solutions</div>
-            </div>
+          {/* Stats */}
+          <div className="grid grid-cols-2 gap-6">
+            {highlights.map((stat, index) => {
+              const Icon = stat.icon;
+              return (
+                <div key={index} className="glass-effect rounded-2xl p-8 text-center hover-glow card-hover">
+                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-r ${stat.color} mb-4`}>
+                    <Icon size={32} className="text-white" />
+                  </div>
+                  <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+                  <div className="text-gray-400 font-medium">{stat.label}</div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
