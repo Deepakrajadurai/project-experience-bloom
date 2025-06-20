@@ -1,5 +1,5 @@
 
-import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles, FolderOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
