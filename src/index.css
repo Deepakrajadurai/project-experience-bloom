@@ -56,7 +56,7 @@
   }
   
   body {
-    @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white;
+    @apply bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
   
@@ -67,15 +67,11 @@
 
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-r from-purple-400 via-pink-500 to-blue-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-purple-400 via-blue-400 to-purple-500 bg-clip-text text-transparent;
   }
   
   .glass-effect {
-    @apply bg-white/10 backdrop-blur-md border border-white/20;
-  }
-  
-  .hover-glow {
-    @apply transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25;
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
   }
   
   .animate-float {
@@ -87,7 +83,7 @@
   }
   
   .text-shadow {
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
   }
   
   .card-hover {
@@ -124,7 +120,7 @@
 
 .skill-progress::before {
   content: '';
-  @apply absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-1000;
+  @apply absolute top-0 left-0 h-full bg-gradient-to-r from-purple-500 to-blue-500 transition-all duration-1000;
 }
 
 .timeline-line {
@@ -132,7 +128,7 @@
 }
 
 .timeline-dot {
-  @apply relative w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center shadow-lg;
+  @apply relative w-16 h-16 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center shadow-lg;
 }
 
 .timeline-dot::before {
