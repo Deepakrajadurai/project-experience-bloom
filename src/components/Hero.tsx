@@ -1,5 +1,5 @@
 
-import { ArrowDown, Github, Linkedin, Mail, Download, Sparkles, FolderOpen } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Download, FolderOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Hero = () => {
@@ -12,15 +12,14 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Simplified Background Elements */}
+      {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/20 rounded-full filter blur-3xl animate-pulse-slow"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/20 rounded-full filter blur-3xl animate-pulse-slow"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-pink-500/20 rounded-full filter blur-3xl animate-pulse-slow"></div>
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="text-center animate-fade-in">
+        <div className="text-center">
           {/* Profile Image */}
           <div className="mb-8 animate-float">
             <div className="relative inline-block">
@@ -36,7 +35,7 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* Name and Title - Simplified */}
+          {/* Name and Title */}
           <div className="mb-8">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-shadow">
               <span className="gradient-text">Vidhula Kripali</span>
